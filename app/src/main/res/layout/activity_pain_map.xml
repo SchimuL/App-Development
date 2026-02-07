@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/pain_map_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        app:navigationIconTint="@color/white" />
+
+    <TextView
+        android:id="@+id/pain_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Schmerz-Karte"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pain_map_toolbar" />
+
+    <TextView
+        android:id="@+id/pain_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Tippe auf den Bereich, der schmerzt"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pain_header_title" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pain_subtitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- FRONT VIEW -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/body_front_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.9"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/body_front" />
+
+                <Button android:tag="Kopf" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.12" app:layout_constraintWidth_percent="0.28" app:layout_constraintVertical_bias="0.05" />
+                <Button android:tag="Brust" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.12" app:layout_constraintWidth_percent="0.4" app:layout_constraintVertical_bias="0.22" />
+                <Button android:tag="Bauch" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.35" app:layout_constraintVertical_bias="0.35" />
+                <Button android:tag="Hüfte (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.45" app:layout_constraintHorizontal_bias="0.28" />
+                <Button android:tag="Hüfte (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.45" app:layout_constraintHorizontal_bias="0.72" />
+                <Button android:tag="Oberschenkel (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.18" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.6" app:layout_constraintHorizontal_bias="0.28" />
+                <Button android:tag="Oberschenkel (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.18" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.6" app:layout_constraintHorizontal_bias="0.72" />
+                <Button android:tag="Knie (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.73" app:layout_constraintHorizontal_bias="0.3" />
+                <Button android:tag="Knie (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.73" app:layout_constraintHorizontal_bias="0.7" />
+                <Button android:tag="Unterschenkel (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.15" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.85" app:layout_constraintHorizontal_bias="0.3" />
+                <Button android:tag="Unterschenkel (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.15" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.85" app:layout_constraintHorizontal_bias="0.7" />
+                <Button android:tag="Sprunggelenk/Fuß (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.98" app:layout_constraintHorizontal_bias="0.3" />
+                <Button android:tag="Sprunggelenk/Fuß (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.98" app:layout_constraintHorizontal_bias="0.7" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- BACK VIEW -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/body_back_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.9"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/body_back" />
+
+                <Button android:tag="Nacken" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.12" />
+                <Button android:tag="Schultern" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.55" app:layout_constraintVertical_bias="0.2" />
+                <Button android:tag="Oberer Rücken" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.4" app:layout_constraintVertical_bias="0.28" />
+                <Button android:tag="Mittlerer Rücken" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.1" app:layout_constraintWidth_percent="0.35" app:layout_constraintVertical_bias="0.38" />
+                <Button android:tag="Unterer Rücken" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.08" app:layout_constraintWidth_percent="0.35" app:layout_constraintVertical_bias="0.47" />
+                <Button android:tag="Gesäß" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.12" app:layout_constraintWidth_percent="0.4" app:layout_constraintVertical_bias="0.58" />
+                <Button android:tag="Oberschenkel hinten (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.18" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.72" app:layout_constraintHorizontal_bias="0.28" />
+                <Button android:tag="Oberschenkel hinten (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.18" app:layout_constraintWidth_percent="0.25" app:layout_constraintVertical_bias="0.72" app:layout_constraintHorizontal_bias="0.72" />
+                <Button android:tag="Wade (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.15" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.88" app:layout_constraintHorizontal_bias="0.3" />
+                <Button android:tag="Wade (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.15" app:layout_constraintWidth_percent="0.2" app:layout_constraintVertical_bias="0.88" app:layout_constraintHorizontal_bias="0.7" />
+                <Button android:tag="Achillessehne (rechts)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.05" app:layout_constraintWidth_percent="0.1" app:layout_constraintVertical_bias="0.98" app:layout_constraintHorizontal_bias="0.33" />
+                <Button android:tag="Achillessehne (links)" android:onClick="onBodyPartClick" android:layout_width="0dp" android:layout_height="0dp" android:background="@android:color/transparent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHeight_percent="0.05" app:layout_constraintWidth_percent="0.1" app:layout_constraintVertical_bias="0.98" app:layout_constraintHorizontal_bias="0.67" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

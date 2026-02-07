@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Abgabe1_LG</string>
+    <string name="fcc_logo">FCC Logo</string>
+    <string name="trainer_login">Trainer Login</string>
+    <string name="club_motto">Fußball. Verrückt. Seit 1903.</string>
+    <string name="gut_kick_in_die_runde">Gut Kick in die Runde</string>
+    <string name="fc_carl_zeiss_jena_athletikcenter">FC Carl Zeiss Jena - Athletikcenter</string>
+
+    <string-array name="verletzungsarten">
+        <item>Bänderdehnung</item>
+        <item>Muskelzerrung</item>
+        <item>Prellung</item>
+        <item>Sonstiges</item>
+    </string-array>
+
+    <string-array name="trainingsziele">
+        <item>Kraftaufbau</item>
+        <item>Ausdauer</item>
+        <item>Schnelligkeit</item>
+        <item>Koordination</item>
+    </string-array>
+
+    <string-array name="reha_phasen">
+        <item>Pre-OP</item>
+        <item>Return to Activity</item>
+        <item>Return to Training</item>
+        <item>Return to Sport (low-load)</item>
+        <item>Return to Sport (high-load)</item>
+        <item>Return to Competition</item>
+    </string-array>
+
+    <string-array name="trainings_level">
+        <item>Anfänger</item>
+        <item>Erfahren</item>
+        <item>Profi</item>
+    </string-array>
+
+    <string-array name="spieler_positionen">
+        <item>Torwart</item>
+        <item>Verteidigung</item>
+        <item>Mittelfeld</item>
+        <item>Sturm</item>
+    </string-array>
+
+    <string-array name="mannschaften">
+        <item>U13 Junioren</item>
+        <item>U14 Junioren</item>
+        <item>U15 Junioren</item>
+        <item>U16 Junioren</item>
+        <item>U17 Junioren</item>
+        <item>U19 Junioren</item>
+        <item>U14 Juniorinnen</item>
+        <item>U17 Juniorinnen</item>
+        <item>U20 Frauen</item>
+    </string-array>
+
+    <string-array name="sport_types">
+        <item>Fußball</item>
+        <item>Krafttraining</item>
+        <item>Laufen</item>
+        <item>Radsport</item>
+        <item>Schwimmen</item>
+        <item>Andere</item>
+    </string-array>
+
+</resources>

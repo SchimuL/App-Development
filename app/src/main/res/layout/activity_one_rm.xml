@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OneRmActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/one_rm_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/button_yellow"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:id="@+id/one_rm_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:stretchColumns="0,3">
+
+            <!-- Header Row -->
+            <TableRow>
+                <TextView android:text="Übung" android:textStyle="bold" android:padding="4dp"/>
+                <TextView android:text="Gewicht" android:textStyle="bold" android:padding="4dp"/>
+                <TextView android:text="Wdh." android:textStyle="bold" android:padding="4dp"/>
+                <TextView android:text="1RM (kg)" android:textStyle="bold" android:padding="4dp"/>
+            </TableRow>
+
+            <!-- Exercise rows will be added dynamically here -->
+
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save_all_1rm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alle Werte Speichern"
+        android:layout_margin="16dp" />
+
+</LinearLayout>
