@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern Dark Palette -->
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="surface_variant">#2C2C2E</color>
+    
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    
+    <!-- Modern Text Colors for Dark Mode -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+
+    <!-- Club Accents (FCCJ) -->
+    <color name="fcc_blue">#143A83</color>
+    <color name="fcc_yellow">#FFC107</color>
+    <color name="accent_orange">#F08A1D</color>
+
+    <!-- Legacy / Compatibility Names -->
+    <color name="fcc_dark_blue">#143A83</color>
+    <color name="button_yellow">#FFC107</color>
+    <color name="red">#CF6679</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="dark_gray">#333333</color>
+
+    <!-- Status Colors -->
+    <color name="success_green">#4CAF50</color>
+    <color name="error_red">#CF6679</color>
+</resources>

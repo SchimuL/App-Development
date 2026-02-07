@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trainings-Fokus"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:stretchColumns="1">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verletzt?"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/dialog_verletzung_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/dialog_verletzung_details_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/dialog_verletzung_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verletzung:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+            <Spinner
+                android:id="@+id/dialog_verletzung_spinner"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/dialog_trainingsziel_details_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/dialog_trainingsziel_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trainingsziel:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+            <Spinner
+                android:id="@+id/dialog_trainingsziel_spinner"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

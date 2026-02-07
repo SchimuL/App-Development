@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrainerDashboardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/trainer_dashboard_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/button_yellow"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Metric Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analyse-Faktor auswählen:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <Spinner
+                android:id="@+id/spinner_dashboard_metric"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- Team Average Chart -->
+            <TextView
+                android:id="@+id/team_average_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Mannschafts-Durchschnitt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_team_average"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <!-- Critical Players List -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Kritische Spieler"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <TextView
+                android:id="@+id/textview_critical_players"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#FFEBEE"
+                android:padding="8dp"
+                android:textColor="#B71C1C"
+                android:text="- Spieler A (ACWR zu hoch)\n- Spieler B (HRV niedrig)"
+                tools:visibility="visible"/>
+
+            <!-- Individual Player Charts -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Einzelspieler-Analyse"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+            <!-- This container will be filled dynamically with player charts -->
+            <LinearLayout
+                android:id="@+id/container_individual_charts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

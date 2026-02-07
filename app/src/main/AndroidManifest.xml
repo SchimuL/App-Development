@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <package android:name="com.google.android.youtube" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Abgabe1_LG">
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:label="Dashboard" />
+
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Mein Profil"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ExerciseSelectionActivity"
+            android:label="Übungsauswahl"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".WellbeingActivity"
+            android:label="Wellbeing-Faktoren"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".PainMapActivity"
+            android:label="Schmerz-Karte"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Trainer Login"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".WorkoutLogActivity"
+            android:label="Mein Logbuch"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".WorkoutDetailActivity"
+            android:label="Workout Details"
+            android:parentActivityName=".WorkoutLogActivity" />
+        <activity
+            android:name=".ChartActivity"
+            android:label="Fortschritt"
+            android:parentActivityName=".WorkoutDetailActivity" />
+
+        <!-- Trainer Section -->
+        <activity
+            android:name=".TrainerHubActivity"
+            android:label="Trainer Menü" />
+        <activity
+            android:name=".PlayerManagementActivity"
+            android:label="Spieler verwalten"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".PolarDataActivity"
+            android:label="Polar Daten-Center"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".TrainerPlanActivity"
+            android:label="Trainer Planer"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".TrainerCalendarActivity"
+            android:label="Terminkalender Management"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".CreateExerciseActivity"
+            android:label="Neue Übung erstellen"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".TrainerTeamSelectionActivity"
+            android:label="Mannschafts-Dashboard"
+            android:parentActivityName=".TrainerHubActivity" />
+        <activity
+            android:name=".TrainerDashboardActivity"
+            android:label="Team-Analyse"
+            android:parentActivityName=".TrainerTeamSelectionActivity" />
+        <activity
+            android:name=".InjuryReportActivity"
+            android:label="Verletzungs-Report"
+            android:parentActivityName=".TrainerTeamSelectionActivity" />
+        <activity
+            android:name=".PlayerSelectionActivity"
+            android:label="Spieler auswählen"
+            android:parentActivityName=".TrainerTeamSelectionActivity" />
+        <activity
+            android:name=".PlayerFileActivity"
+            android:label="Digitale Spieler-Akte"
+            android:parentActivityName=".PlayerSelectionActivity" />
+        <activity
+            android:name=".PlayerPerformanceActivity"
+            android:label="Leistungsdaten"
+            android:parentActivityName=".PlayerSelectionActivity" />
+        <activity
+            android:name=".MailboxActivity"
+            android:label="Neue Mitteilung"
+            android:parentActivityName=".TrainerHubActivity" />
+
+        <!-- Player Section -->
+        <activity
+            android:name=".PlayerCalendarActivity"
+            android:label="Personal-Training buchen"
+            android:parentActivityName=".HomeActivity" />
+
+        <!-- Other Activities -->
+        <activity
+            android:name=".VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".DetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".CustomPlanActivity"
+            android:label="Dein Plan"
+            android:parentActivityName=".ExerciseSelectionActivity" />
+        <activity
+            android:name=".OneRmActivity"
+            android:label="1RM-Werte"
+            android:parentActivityName=".ProfileActivity" />
+
+    </application>
+
+</manifest>

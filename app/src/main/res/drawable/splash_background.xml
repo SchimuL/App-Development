@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid background color -->
+    <item android:drawable="@color/background_dark" />
+
+    <!-- Center the logo -->
+    <item
+        android:drawable="@drawable/fcc"
+        android:gravity="center" />
+
+    <!-- Scientific Performance Icon at the bottom (as simple item, not bitmap) -->
+    <item
+        android:bottom="48dp"
+        android:gravity="bottom|center_horizontal">
+        <selector>
+            <item>
+                <bitmap
+                    android:src="@drawable/ic_bar_chart"
+                    android:alpha="0.3"
+                    android:gravity="center" />
+            </item>
+        </selector>
+    </item>
+    
+    <!-- Alternative safe way for vector icons -->
+    <item
+        android:id="@+id/splash_icon"
+        android:drawable="@drawable/ic_bar_chart"
+        android:gravity="bottom|center_horizontal"
+        android:bottom="60dp"
+        android:width="40dp"
+        android:height="40dp"
+        android:alpha="0.5" />
+
+</layer-list>

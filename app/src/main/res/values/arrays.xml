@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="training_types">
+        <item>Trainingsbetreuung bei Verletzung im Gym</item>
+        <item>Fussballspezifisches Training auf dem Platz</item>
+    </string-array>
+
+    <string-array name="training_durations">
+        <item>60 Minuten</item>
+        <item>90 Minuten</item>
+    </string-array>
+</resources>

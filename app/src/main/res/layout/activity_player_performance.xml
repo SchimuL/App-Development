@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerPerformanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/performance_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Leistungsdaten"
+                app:titleTextColor="?attr/colorOnPrimary" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Key Metrics -->
+        <TextView
+            android:id="@+id/tv_session_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            tools:text="Daten vom: 2025-08-26" />
+
+        <TextView
+            android:id="@+id/tv_total_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Gesamtdistanz: 10.2 km (Ø 9.8 km)" />
+
+        <TextView
+            android:id="@+id/tv_sprints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Sprints: 15 (Ø 12)" />
+
+        <TextView
+            android:id="@+id/tv_max_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Max. Geschwindigkeit: 31.2 km/h (Ø 30.5 km/h)" />
+
+        <!-- Trend Chart -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Verlauf (Letzte 5 Einheiten)"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_trend"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <!-- HR Zone Chart -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Zeit in HF-Zonen"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_hr_zones"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <!-- Speed Zone Chart -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Distanz in Geschwindigkeitszonen"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_speed_zones"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <!-- Acceleration/Deceleration Charts -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Beschleunigungen &amp; Entschleunigungen"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/chart_accel_decel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+</ScrollView>
