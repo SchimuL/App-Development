@@ -234,9 +234,16 @@ public class WellbeingActivity extends AppCompatActivity {
     }
 
     private void setupSeekBarListener(SeekBar seekBar, TextView valueTextView) {
+        if (seekBar == null) return;
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) { valueTextView.setText(String.valueOf(progress + 1)); }
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // Nur Text setzen, wenn die TextView auch wirklich existiert
+                if (valueTextView != null) {
+                    valueTextView.setText(String.valueOf(progress + 1));
+                }
+            }
             @Override public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override public void onStopTrackingTouch(SeekBar seekBar) {}
         });
