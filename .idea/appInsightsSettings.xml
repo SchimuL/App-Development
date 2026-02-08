@@ -8,9 +8,9 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.abgabe1_lg" />
+                  <option name="appId" value="com.example.FCC_app" />
                   <option name="mobileSdkAppId" value="1:97561660428:android:349ca163cb42378284b229" />
-                  <option name="projectId" value="abgabe1-lg" />
+                  <option name="projectId" value="FCC_app" />
                   <option name="projectNumber" value="97561660428" />
                 </ConnectionSetting>
               </option>

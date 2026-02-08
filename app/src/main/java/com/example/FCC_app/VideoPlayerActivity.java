@@ -16,6 +16,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(this, "Player gestartet", Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_player);
 
@@ -37,7 +38,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
                 uri = Uri.parse(videoPath);
             } else {
                 // It's a local file name, build the resource path
-                String path = "android.resource://" + getPackageName() + "/raw/" + videoPath;
+                String path = "android.resource://" + getPackageName() + "/" + videoPath;
                 uri = Uri.parse(path);
             }
 
