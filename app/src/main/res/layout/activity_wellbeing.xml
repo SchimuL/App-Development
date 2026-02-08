@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_dark">
@@ -93,16 +92,28 @@
                         android:orientation="vertical"
                         android:padding="16dp">
 
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Stress-Level" android:textColor="@color/white" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Stress-Level" android:textColor="@color/white" />
+                            <TextView android:id="@+id/value_stress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textColor="@color/fcc_yellow" android:textStyle="bold" />
+                        </LinearLayout>
                         <SeekBar android:id="@+id/seekbar_stress" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="6" android:progressTint="@color/fcc_yellow" android:thumbTint="@color/fcc_yellow"/>
-                        
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ermüdung" android:textColor="@color/white" android:layout_marginTop="12dp" />
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ermüdung" android:textColor="@color/white" />
+                            <TextView android:id="@+id/value_fatigue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textColor="@color/fcc_yellow" android:textStyle="bold" />
+                        </LinearLayout>
                         <SeekBar android:id="@+id/seekbar_fatigue" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="6" android:progressTint="@color/fcc_yellow" android:thumbTint="@color/fcc_yellow"/>
 
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Muskelkater" android:textColor="@color/white" android:layout_marginTop="12dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Muskelkater" android:textColor="@color/white" />
+                            <TextView android:id="@+id/value_soreness" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textColor="@color/fcc_yellow" android:textStyle="bold" />
+                        </LinearLayout>
                         <SeekBar android:id="@+id/seekbar_soreness" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="6" android:progressTint="@color/fcc_yellow" android:thumbTint="@color/fcc_yellow"/>
 
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Schmerzen" android:textColor="@color/white" android:layout_marginTop="12dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Schmerzen" android:textColor="@color/white" />
+                            <TextView android:id="@+id/value_pain" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textColor="@color/fcc_yellow" android:textStyle="bold" />
+                        </LinearLayout>
                         <SeekBar android:id="@+id/seekbar_pain" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="6" android:progressTint="@color/fcc_yellow" android:thumbTint="@color/fcc_yellow"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -127,8 +138,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Intensität" android:textColor="@color/white" />
+                            <TextView android:id="@+id/value_rpe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textColor="@color/accent_orange" android:textStyle="bold" />
+                        </LinearLayout>
+
                         <SeekBar android:id="@+id/seekbar_rpe" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="9" android:progressTint="@color/accent_orange" android:thumbTint="@color/accent_orange"/>
-                        
+
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal">
                             <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="8dp" android:hint="Art" app:hintTextColor="@color/text_secondary" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                                 <com.google.android.material.textfield.TextInputEditText android:id="@+id/edittext_training_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" />
@@ -152,7 +169,7 @@
                     app:backgroundTint="@color/fcc_yellow"
                     app:cornerRadius="16dp" />
 
-                <!-- Chart Section (Optimized Height) -->
+                <!-- Chart Section -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

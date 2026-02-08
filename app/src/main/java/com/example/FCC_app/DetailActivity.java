@@ -229,32 +229,22 @@ public class DetailActivity extends AppCompatActivity {
             // Video-Button Logik
             String videoName = ExerciseDataSource.getVideoForExercise(item.name);
 
-            // Innerhalb von onBindViewHolder
-            if (videoName != null && !videoName.isEmpty()) {
-                holder.video.setVisibility(View.VISIBLE);
+            if (videoName != null && !videoName.isEmpty()) {holder.video.setVisibility(View.VISIBLE);
+                holder.video.setOnClickListener(v -> {
+                    android.util.Log.d("VIDEO", "BUTTON KLICK ERKANNT! Video: " + videoName);
+                    Intent intent = new Intent(v.getContext(), VideoPlayerActivity.class);
 
-                // Erzwinge, dass der Button Klicks priorisiert
-                holder.video.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        android.util.Log.d("VIDEO", "BUTTON KLICK ERKANNT! Video: " + videoName);
-
-                        Intent intent = new Intent(v.getContext(), VideoPlayerActivity.class);
-                        // Nutze hier die exakten Strings, die deine VideoPlayerActivity erwartet
-                        intent.putExtra("EXTRA_VIDEO_PATH", videoName);
-                        intent.putExtra("EXTRA_IS_URL", false);
-                        v.getContext().startActivity(intent);
-                    }
+                    // Nutze die Konstanten aus der VideoPlayerActivity Klasse
+                    intent.putExtra(VideoPlayerActivity.EXTRA_VIDEO_PATH, videoName);
+                    intent.putExtra(VideoPlayerActivity.EXTRA_IS_URL, false);
+                    v.getContext().startActivity(intent);
                 });
             } else {
                 holder.video.setVisibility(View.GONE);
             }
 
-            // Der Zeilen-Klick für den Dialog:
-            // Setze den Listener für die itemView NUR, wenn nicht auf den Button geklickt wurde.
-// Ein MaterialButton konsumiert Klicks normalerweise selbst, aber wir gehen auf Nummer sicher:
+// NUR HIER der Klick für die Zeile (Dialog)
             holder.itemView.setOnClickListener(v -> {
-                android.util.Log.d("VIDEO", "Zeile geklickt (Dialog)");
                 showSetInputDialog(item);
             });
 
@@ -264,8 +254,8 @@ public class DetailActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     android.util.Log.d("VIDEO", "BUTTON KLICK ERKANNT! Video: " + videoName);
                     Intent intent = new Intent(v.getContext(), VideoPlayerActivity.class);
-                    intent.putExtra("EXTRA_VIDEO_PATH", videoName);
-                    intent.putExtra("EXTRA_IS_URL", false);
+                    intent.putExtra(VideoPlayerActivity.EXTRA_VIDEO_PATH, videoName);
+                    intent.putExtra(VideoPlayerActivity.EXTRA_IS_URL, false);
                     v.getContext().startActivity(intent);
                 }
             });
