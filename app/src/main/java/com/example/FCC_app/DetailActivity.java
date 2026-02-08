@@ -2,9 +2,11 @@ package com.example.FCC_app;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -223,7 +225,50 @@ public class DetailActivity extends AppCompatActivity {
                 holder.weight.setTextColor(Color.parseColor("#FFC107"));
             }
             holder.note.setText(item.note);
-            holder.itemView.setOnClickListener(v -> showSetInputDialog(item));
+
+            // Video-Button Logik
+            String videoName = ExerciseDataSource.getVideoForExercise(item.name);
+
+            // Innerhalb von onBindViewHolder
+            if (videoName != null && !videoName.isEmpty()) {
+                holder.video.setVisibility(View.VISIBLE);
+
+                // Erzwinge, dass der Button Klicks priorisiert
+                holder.video.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        android.util.Log.d("VIDEO", "BUTTON KLICK ERKANNT! Video: " + videoName);
+
+                        Intent intent = new Intent(v.getContext(), VideoPlayerActivity.class);
+                        // Nutze hier die exakten Strings, die deine VideoPlayerActivity erwartet
+                        intent.putExtra("EXTRA_VIDEO_PATH", videoName);
+                        intent.putExtra("EXTRA_IS_URL", false);
+                        v.getContext().startActivity(intent);
+                    }
+                });
+            } else {
+                holder.video.setVisibility(View.GONE);
+            }
+
+            // Der Zeilen-Klick für den Dialog:
+            // Setze den Listener für die itemView NUR, wenn nicht auf den Button geklickt wurde.
+// Ein MaterialButton konsumiert Klicks normalerweise selbst, aber wir gehen auf Nummer sicher:
+            holder.itemView.setOnClickListener(v -> {
+                android.util.Log.d("VIDEO", "Zeile geklickt (Dialog)");
+                showSetInputDialog(item);
+            });
+
+// ZUSÄTZLICH: Verhindere, dass der Button-Klick an die itemView weitergereicht wird
+            holder.video.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    android.util.Log.d("VIDEO", "BUTTON KLICK ERKANNT! Video: " + videoName);
+                    Intent intent = new Intent(v.getContext(), VideoPlayerActivity.class);
+                    intent.putExtra("EXTRA_VIDEO_PATH", videoName);
+                    intent.putExtra("EXTRA_IS_URL", false);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
         @Override public int getItemCount() { return items.size(); }
         class ViewHolder extends RecyclerView.ViewHolder {
